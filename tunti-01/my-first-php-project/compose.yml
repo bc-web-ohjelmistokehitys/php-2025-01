@@ -1,0 +1,45 @@
+services:
+  possukka:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_PASSWORD: example
+    networks:
+      - my-first-network
+    ports:
+      - 5433:5432
+
+  php-fpm:
+    build:
+      dockerfile: configs/php-fpm/Dockerfile
+    # image: php:8.2-fpm
+    volumes:
+      - ./public:/var/www/html/public
+    networks:
+      - my-first-network
+
+  web:
+    image: nginx
+    volumes:
+      - ./public:/var/www/html/public
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80
+    networks:
+      - my-first-network
+
+networks:
+  my-first-network:
+    driver: bridge
