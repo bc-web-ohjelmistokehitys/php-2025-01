@@ -9,6 +9,8 @@
   <h1>Heipparallaa!</h1>
 
   <?php
+
+  // https://www.php.net/manual/en/book.pdo.php
   $conn = new PDO("pgsql:host=possukka;port=5432;dbname=postgres;user=postgres;password=example");
 
   $query = $conn->query("SELECT * FROM person");
@@ -17,10 +19,14 @@
 
   <?php echo "My first PHP ECHO"; ?>
 
-  <?php // echo phpinfo(); ?>
+  <?php
+  // https://www.php.net/manual/en/function.phpinfo.php
+  echo phpinfo();
+  ?>
 
   <p>Minä olen Peksu Pöksy, opettajista parhain!</p>
 
+  <?php // https://www.php.net/manual/en/control-structures.alternative-syntax.php ?>
   <ul>
     <?php foreach ($rows as $row): ?>
       <li><?php echo $row['name']; ?></li>

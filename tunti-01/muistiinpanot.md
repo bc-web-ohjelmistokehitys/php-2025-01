@@ -33,7 +33,7 @@ Docker on virtualisointiohjelmisto, jolla ohjelmistot ja koodit paketoidaan _kon
 
 Dockeria käytetään sekä kehitys- että tuotantoympäristöissä. Kummassakin on vähän erilaiset lainalaisuudet, ja me keskitymme tässä kohtaa kehitysympäristöön.
 
-## Vauvan ensimmäinen Docker-PHP-sovellus
+## Vauvan ensimmäinen Docker-PHP-sovellus (Docker ja PHP 101)
 
 Teemme ensimmäisen PHP-sovelluksmme "vanhan maailman" PHP:llä, jossa PHP:tä koodataan suoraan HTML:n sekaan. Tämä oli PHP:n alkuperäinen koukku: staattisesta hötskästä pääsemme dynaamiseen PHP-maailmaan vaihtamalla tiedoston nimen.php:ksi ja parsimalla sen PHP-tulkilla.
 
@@ -91,4 +91,17 @@ Yksittäisten docker-konttien konfigurointi tapahtuu `Dockerfile`-tiedostossa. J
 
 PHP-kontille räätälöimässämme tiedostossa kerromme, mistä "pohjakontista" lähdemme liikkeelle, ja millaisia komentoja ajamme. Asennamme kontin Debian-linux-distroon kirjaston, ja käännämme PHP-tulkille uuden laajennoksen. Kuinka hauskaa ja helppoa! Tuntui, kuin olisin palannut kotiin (tein näitä juttuja paljon 2000-luvun alkuvuosina).
 
-Linkittääksemme host-koneen (oma mäccimme) ja konttien tiedostojärjestelmät käytämme [voluumeja](https://docs.docker.com/engine/storage/volumes/). Mikä niiden suhteen on "oikein" ja mikä "väärin" on itsellenikin mysteeri. En todellakaan ole mikään suurin Docker-guru maailmassa.
+Linkittääksemme host-koneen (oma mäccimme) ja konttien tiedostojärjestelmät käytämme [voluumeja](https://docs.docker.com/engine/storage/volumes/). Mikä niiden suhteen on "oikein" ja mikä "väärin" on itsellenikin mysteeri. En todellakaan ole suurin Docker-guru maailmassa.
+
+### PHP-scripta
+
+Laitoin [koodaamaani PHP-scribaleeseen](./my-first-php-project/public/index.php) linkkejä PHP:n manuskaan. Kannattaa käydä ihmettelemässä.
+
+### Kotiin vietäväksi
+
+- Tutkaile Nginxiä ja HTTP-palvelimia
+- Lue Dockerin manuskoja, koita ymmärtää Dockeria.
+- Lue PHP:n manuskoja, koita ymmärtää PHP:tä.
+- Lue Wordpressin PHP-koodia sen index.php:stä alkaen.
+- Mainitsin sanan "regex" kun [konffasimme Nginxiä](./my-first-php-project/default.conf). [Lue siitä](https://en.wikipedia.org/wiki/Regular_expression) ja googleta lisää. Regexit ovat tärkeitä!
+- Koodaa tunti/päiväkausia jotain omaa kaikilla näillä ihanuuksilla!
