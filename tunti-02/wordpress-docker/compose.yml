@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpassu
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpressuser
+      MARIADB_PASSWORD: wordpresspassu
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - my-first-network
+
+  php-fpm:
+    build:
+      dockerfile: configs/php-fpm/Dockerfile
+    # image: php:8.2-fpm
+    volumes:
+      - ./wordpress:/var/www/html/public
+    networks:
+      - my-first-network
+
+  web:
+    image: nginx
+    volumes:
+      - ./wordpress:/var/www/html/public
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80
+    networks:
+      - my-first-network
+
+networks:
+  my-first-network:
+    driver: bridge
