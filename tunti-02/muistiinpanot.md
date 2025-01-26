@@ -164,3 +164,9 @@ Ajoimme initialisointikomennon (`composer init`) menestyksekkäästi läpi proje
 Sitten aikamme loppui, ja sanoin: "jatkamme tästä ensi kerralla".
 
 Ja niin teemme!
+
+## Kotiin vietäväksi
+
+Koska koodausta oppii koodaamalla, dockerointia dockeroimalla, ja gitin käyttöä käyttämällä gitiä, kehotan teitä käyttämään alkuviikon näiden asioiden parissa.
+
+Jos haluatte teho-oppia gittiä, suosittelen vahvasti, että lähdette tekemään jotain proggista parityönä / ryhmässä. Silloin opitte luonnollisen tekemisen myötä vääjäämättä ja nopeasti kaikki aiemmin tässä dokkarissa mainitsemani elintärkeät perustaidot!
