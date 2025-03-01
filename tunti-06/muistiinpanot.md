@@ -55,8 +55,31 @@ Viritimme kehitysympäristön kasaan askel askeleelta.
 
 Ihmettelimme projektin kansiorakennetta. Tutkimuksien kannattaa ottaa:
 
+- [.env](./suomioy/.env.example) env-muuttujat
 - [index.php](./suomioy/public/index.php) Kaikki lähtee liikkeelle tästä.
 - [reititys](./suomioy/routes/web.php) Reititys löytyy täältä.
+
+### Viimeinen taso
+
+Totesin, että tätä voi ajatella "viimeisenä tasona". Kaikki, mitä olette oppineet, ja mitä itse olen koittanut tähdentää, yhdistyy tässä. Teemme kokonaista sovellusta (backend + frontend) oikeilla teknologioilla ja välineillä. Jos täällä pärjää, pärjää työharjoittelussa.
+
+Lähestymistapa on "syvään päätyyn" tässä kohtaa, tekemisen kautta. Kaikkiin eteen tuleviin PHP-asioihin kannattaa totta kai perehtyä sitä mukaa kun niitä tulee.
+
+Tässä luettavaa tältä tunnilta:
+
+- [Composer](https://getcomposer.org/)
+- [require](https://www.php.net/manual/en/function.require.php) ja [require_once](https://www.php.net/manual/en/function.require-once.php)
+- [Autoloadaus](https://www.php.net/manual/en/function.spl-autoload-register.php)
+  - https://www.php-fig.org/psr/psr-0/
+  - https://www.php-fig.org/psr/psr-4/
+- [Namespacet](https://www.php.net/manual/en/language.namespaces.rationale.php)
+- [Arrayt](https://www.php.net/manual/en/language.types.array.php)
+- [Funktioiden parametrit](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+- [var_dump](https://www.php.net/manual/en/function.var-dump.php) ja [print_r](https://www.php.net/manual/en/function.print-r.php) ja [die](https://www.php.net/manual/en/function.die.php) debuggaukseen.
+
+Ylipäätään PHP:llä on tosi hyvä online-manuska, jota kannattaa todellakin tavata.
+
+- https://www.php.net/
 
 ## Sukunimitilasto
 
