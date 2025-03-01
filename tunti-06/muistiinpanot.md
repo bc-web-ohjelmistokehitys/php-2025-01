@@ -76,6 +76,7 @@ Tässä luettavaa tältä tunnilta:
 - [Arrayt](https://www.php.net/manual/en/language.types.array.php)
 - [Funktioiden parametrit](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
 - [var_dump](https://www.php.net/manual/en/function.var-dump.php) ja [print_r](https://www.php.net/manual/en/function.print-r.php) ja [die](https://www.php.net/manual/en/function.die.php) debuggaukseen.
+- [PHPDoc](https://docs.phpdoc.org/guide/references/phpdoc/index.html)
 
 Ylipäätään PHP:llä on tosi hyvä online-manuska, jota kannattaa todellakin tavata.
 
