@@ -3,7 +3,6 @@ import BasicLayout from '@/layouts/basic-layout';
 import clsx from 'clsx';
 import { FC } from 'react';
 
-// TODO! We will have props soon.
 type Props = {
     oldestLiving: {
         id: number;
@@ -29,7 +28,7 @@ const Surname: FC<Props> = ({ name, oldestLiving }) => {
                 <ul className="my-4">
                     {oldestLiving.map((person, i) => {
                         // conditional styling demonstrated here; zebra coloring for rows with modulo
-                        const classes = clsx(i % 2 === 0 && 'bg-gray-500', i % 2 !== 0 && 'bg-gray-100', 'p-2');
+                        const classes = clsx('p-2', i % 2 === 0 && 'bg-gray-500', i % 2 !== 0 && 'bg-gray-100');
 
                         return (
                             <li className={classes} key={person.id}>

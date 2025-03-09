@@ -38,9 +38,17 @@ Lisäsimme sivun välisiä linkkejä. Tätä varten meidän piti tietää, että
 
 Miksi? Koska JS-frameworkit eivät yleensä (eivätkä nytkään) halua tehdä kokonaisia sivulatauksia, vaan käyttää omia sisäisiä taikuuksiaan.
 
+## Sukunimisivun lisäominaisuudet
+
+Toteutimme [sukunimi-sivulle](./suomioy/resources/js/pages/surname.tsx) listan vanhimmista yhä elossaolevista kyseisen sukunimen omaavista henkilöistä.
+
+Tästä listasta henkilön nimeä klikkaamalla pääsee eteenpäin yksittäisille henkilösivuille, joilla näytetään kyseisen henkilön perustiedot.
+
+Toteutin nimilistalle seepra-värityksen käyttämällä [clsx](https://www.npmjs.com/package/clsx)-kirjastoa ehdolliseen tyylitykseen. Tähän kannattaa perehtyä huolella, koska se on tosi yleinen ja toistuva menetelmä.
+
 ## Henkilösivu
 
-Toteutimme sukunimi-sivulle listan vanhimmista yhä elossaolevista kyseisen sukunimen omaavista henkilöistä. Tästä listasta klikkaamalla pääsee eteenpäin yksittäisille henkilösivuille, joilla näytetään kyseisen henkilön perustiedot.
+Haimme sivulle henkilön tiedot, ja [teimme sille komponentin](./suomioy/resources/js/pages/person.tsx).
 
 Toteutimme yksinkertaisen [lomakkeen](https://inertiajs.com/forms), jonka avulla vielä eläville ihmisille voi ilmoittaa heidän kuolinpäivänsä.
 
