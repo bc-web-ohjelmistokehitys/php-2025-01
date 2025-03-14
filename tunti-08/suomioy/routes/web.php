@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -8,43 +9,13 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
-Route::post('/person/{id}', function (string $id, Request $request) {
+Route::post('/person/{id}', [PersonController::class, 'post'])
+    ->name('person.update');
 
+Route::get('/person/{id}', [PersonController::class, 'view'])
+    ->name('person');
 
-    $data = $request->validate([
-        // todo: better validation!
-        'deathday' => ['required', 'string']
-    ]);
-
-    // todo: this is not very robust for real life yet!
-    DB::table('person')
-        ->where('id', '=', $id)
-        ->update($data);
-
-    return to_route('person', ['id' => $id]);
-
-
-})->name('person.update');
-
-
-Route::get('/person/{id}', function (string $id) {
-
-    $person = DB::table('person')
-        ->select([
-            // fetching all columns is evil, don't do it in real life!
-            '*',
-        ])
-        ->where('id', '=', $id)
-        ->firstOrFail();
-
-
-    return Inertia::render('person', [
-        'person' => $person,
-    ]);
-
-
-})->name('person');
-
+// TODO: Create SurnamesController, move and groove the surname functionality there!
 
 Route::get('/surnames/{name}', function (string $name) {
 

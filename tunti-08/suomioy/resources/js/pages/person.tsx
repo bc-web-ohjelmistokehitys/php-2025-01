@@ -1,6 +1,6 @@
 import BasicLayout from '@/layouts/basic-layout';
-import { router } from '@inertiajs/react';
-import { FC, useState } from 'react';
+import { useForm } from '@inertiajs/react';
+import { FC } from 'react';
 
 // TODO! We will have props soon.
 type Props = {
@@ -23,7 +23,9 @@ type Props = {
 */
 
 const Person: FC<Props> = ({ person }) => {
-    const [deathday, setDeathday] = useState(person.deathday || '2025-03-07');
+    const { errors, data, setData, post, processing } = useForm({
+        deathday: person.deathday || '2025-03-07',
+    });
 
     return (
         <BasicLayout aside={<div>Mahtisivupalkki</div>}>
@@ -48,21 +50,20 @@ const Person: FC<Props> = ({ person }) => {
                                 // TODO: route func
                                 const target = `/person/${person.id}`;
 
-                                router.post(target, {
-                                    deathday,
-                                });
+                                post(target);
                             }}
                         >
+                            {errors.deathday && <div className="mx-2 text-red-600">{errors.deathday}</div>}
                             <input
                                 type="date"
                                 name="deathday"
                                 id="deathday"
-                                value={deathday}
+                                value={data.deathday}
                                 onChange={(e) => {
-                                    setDeathday(e.target.value);
+                                    setData('deathday', e.target.value);
                                 }}
                             />
-                            <button type="submit" className="border-4">
+                            <button disabled={processing} type="submit" className="border-4 disabled:opacity-50">
                                 hep
                             </button>
                         </form>
